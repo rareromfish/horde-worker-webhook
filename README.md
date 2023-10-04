@@ -1,0 +1,24 @@
+# Discord Webhook for AI Horde Worker
+
+Updates status every 5 minutes, checks info for an ai horde text worker.
+
+Limitations:
+- leaderboard only checks the first 50 pahes of API for time reasons.
+- Currently only wprks for text workers
+- I (Efreak) will *not* maintain this. I wrote it for Bluefish, its theirs now.
+- timers are not exact, because there's no async going on here; it'll update a little over every 5 minutes, and update the keyboard every 36 updates (actually every 3 hours; this is configurable)
+
+## Requirements:
+- discord-webhook
+- discord-timestamps
+
+discord-timestamps is probably unnecessary in retrospect, not it's a *very* lightweight dependency with only one unnecessary subdependency (Arrow).
+
+## Usage
+1. `pip install -r requirements.txt`
+2. edit webhook.py to update configuration
+3. `python webhook.py`
+
+
+## License
+[![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl.svg)](http://www.wtfpl.net)

@@ -1,3 +1,5 @@
+# aihorde-discord-webhook
+# license wtfpl
 from discord_webhook import DiscordWebhook
 from time import sleep
 from datetime import timedelta, datetime
