@@ -58,7 +58,7 @@ while True:
 - **Uptime**: {timedelta(data['uptime'])}
 - **Uncompleted Jobs**: {data['uncompleted_jobs']:,d}
 - **Requests Completed**: {data['requests_fulfilled']:,d}
-- **Kudos**: {data['kudos_rewards']:,d} ({data['kudos_details']['generated']:,d} generation, {data['kudos_details']['uptime']:,d} uptime)
+- **Kudos**: {int(data['kudos_rewards']):,d} ({int(data['kudos_details']['generated']):,d} generation, {int(data['kudos_details']['uptime']):,d} uptime)
 - **Performance**: {data['performance']}
 *Updated: {format_timestamp(datetime.now().timestamp(),TimestampType.RELATIVE)}*"""
     webhook.content = content + '\n\nNo userinfo yet...'
@@ -96,7 +96,7 @@ while True:
         content += f"""
 
 Details for [{userinfo['username']}](https://aihorde.net/api/v2/users/{horde_userid}):
-- **Kudos**: {userinfo['kudos']:,d}
+- **Kudos**: {int(userinfo['kudos']):,d}
 - **Leaderboard Position**: {pos:,d}
 - **Workers**: {userinfo['worker_count']}
 - **Trusted**: {userinfo['trusted']}
