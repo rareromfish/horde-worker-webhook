@@ -39,7 +39,7 @@ firstrun = True
 userinfo = ""
 webhook = DiscordWebhook(url=webhookurl, content="fetching data...")
 webhook.execute()
-while firstrun or sleep(300):
+while True:
     firstrun = False
     response = requests.get("https://aihorde.net/api/v2/workers/"+workerid,headers=headers)
     data = response.json()
@@ -110,3 +110,4 @@ Details for [{userinfo['username']}](https://aihorde.net/api/v2/users/{horde_use
     print("done")
     webhook.content = content
     webhook.edit()
+    sleep(300)
