@@ -60,7 +60,7 @@ while True:
 - **Requests Completed**: {data['requests_fulfilled']}
 - **Kudos**: {data['kudos_rewards']} ({data['kudos_details']['generated']} generation, {data['kudos_details']['uptime']} uptime)
 - **Performance**: {data['performance']}
-*Updated: {format_timestamp(datetime.utcnow().timestamp(),TimestampType.RELATIVE)}*"""
+*Updated: {format_timestamp(datetime.now().timestamp(),TimestampType.RELATIVE)}*"""
     webhook.content = content + '\n\nNo userinfo yet...'
     webhook.edit()
     since_leaderboard += 1
@@ -85,7 +85,7 @@ while True:
                     oldpos = pos
                     oldts = userts
                     userinfo = user
-                    userts = format_timestamp(datetime.utcnow().timestamp(),TimestampType.RELATIVE)
+                    userts = format_timestamp(datetime.now().timestamp(),TimestampType.RELATIVE)
                     pos = newpos
                     break
             if not loop:
@@ -100,12 +100,12 @@ Details for [{userinfo['username']}](https://aihorde.net/api/v2/users/{horde_use
 - **Leaderboard Position**: {pos}
 - **Workers**: {userinfo['worker_count']}
 - **Trusted**: {userinfo['trusted']}
-- **Account Created**: {format_timestamp(datetime.utcnow().timestamp() - userinfo['account_age'], TimestampType.RELATIVE)}
+- **Account Created**: {format_timestamp(datetime.now().timestamp() - userinfo['account_age'], TimestampType.RELATIVE)}
 """
         if oldpos and oldts:
             print("oldpos found")
             content += f"- **Previous Position**: {oldpos} {oldts})"
-        content += f"\n\n*Updated: {format_timestamp(datetime.utcnow().timestamp(),TimestampType.RELATIVE)}*"
+        content += f"\n\n*Updated: {format_timestamp(datetime.now().timestamp(),TimestampType.RELATIVE)}*"
     else: content += f"\n\n*User not found. Leaderboard position unavailable*."
     print("done")
     webhook.content = content
