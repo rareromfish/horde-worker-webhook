@@ -55,7 +55,7 @@ while True:
     content = f"""
 [{data['name']}](https://aihorde.net/api/v2/workers/{workerid}):
 - **Status**: {status}
-- **Uptime**: {timedelta(data['uptime'])}
+- **Uptime**: {timedelta(seconds=data['uptime'])}
 - **Uncompleted Jobs**: {data['uncompleted_jobs']:,d}
 - **Requests Completed**: {data['requests_fulfilled']:,d}
 - **Kudos**: {int(data['kudos_rewards']):,d} ({int(data['kudos_details']['generated']):,d} generation, {int(data['kudos_details']['uptime']):,d} uptime)
