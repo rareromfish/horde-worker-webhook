@@ -56,9 +56,9 @@ while True:
 [{data['name']}](https://aihorde.net/api/v2/workers/{workerid}):
 - **Status**: {status}
 - **Uptime**: {timedelta(data['uptime'])}
-- **Uncompleted Jobs**: {data['uncompleted_jobs']}
-- **Requests Completed**: {data['requests_fulfilled']}
-- **Kudos**: {data['kudos_rewards']} ({data['kudos_details']['generated']} generation, {data['kudos_details']['uptime']} uptime)
+- **Uncompleted Jobs**: {data['uncompleted_jobs']:,d}
+- **Requests Completed**: {data['requests_fulfilled']:,d}
+- **Kudos**: {data['kudos_rewards']:,d} ({data['kudos_details']['generated']:,d} generation, {data['kudos_details']['uptime']:,d} uptime)
 - **Performance**: {data['performance']}
 *Updated: {format_timestamp(datetime.now().timestamp(),TimestampType.RELATIVE)}*"""
     webhook.content = content + '\n\nNo userinfo yet...'
@@ -96,15 +96,15 @@ while True:
         content += f"""
 
 Details for [{userinfo['username']}](https://aihorde.net/api/v2/users/{horde_userid}):
-- **Kudos**: {userinfo['kudos']}
-- **Leaderboard Position**: {pos}
+- **Kudos**: {userinfo['kudos']:,d}
+- **Leaderboard Position**: {pos:,d}
 - **Workers**: {userinfo['worker_count']}
 - **Trusted**: {userinfo['trusted']}
 - **Account Created**: {format_timestamp(datetime.now().timestamp() - userinfo['account_age'], TimestampType.RELATIVE)}
 """
         if oldpos and oldts:
             print("oldpos found")
-            content += f"- **Previous Position**: {oldpos} {oldts})"
+            content += f"- **Previous Position**: {oldpos:,d} {oldts})"
         content += f"\n\n*Updated: {format_timestamp(datetime.now().timestamp(),TimestampType.RELATIVE)}*"
     else: content += f"\n\n*User not found. Leaderboard position unavailable*."
     print("done")
