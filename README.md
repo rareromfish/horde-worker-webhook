@@ -4,8 +4,8 @@ Updates status every 5 minutes, checks info for an ai horde text worker.
 
 Limitations:
 - leaderboard only checks the first 50 pahes of API for time reasons.
-- Currently only wprks for text workers
-- I (Efreak) will *not* maintain this. I wrote it for Bluefish, its theirs now.
+- currently only works for text workers.
+- Efreak will *not* maintain this. They wrote it for me and I should be the one contacted.
 - timers are not exact, because there's no async going on here; it'll update a little over every 5 minutes, and update the keyboard every 36 updates (actually every 3 hours; this is configurable)
 
 ## Requirements:
