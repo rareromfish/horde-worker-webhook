@@ -94,7 +94,7 @@ while True:
                 break
             sleep(3)
     if pos and userts:
-        print("pos found")
+        print("position found")
         content += f"""
 
 Details for [{userinfo['username']}](https://aihorde.net/api/v2/users/{horde_userid}):
@@ -105,7 +105,7 @@ Details for [{userinfo['username']}](https://aihorde.net/api/v2/users/{horde_use
 - **Account Created**: {format_timestamp(datetime.now().timestamp() - userinfo['account_age'], TimestampType.RELATIVE)}
 """
         if oldpos and oldts:
-            print("oldpos found")
+            print("old position found")
             content += f"- **Previous Position**: {oldpos:,d} {oldts})"
         content += f"\n\n*Updated: {format_timestamp(datetime.now().timestamp(),TimestampType.RELATIVE)}*"
     else: content += f"\n\n*User not found. Leaderboard position unavailable*."
