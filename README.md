@@ -19,6 +19,8 @@ discord-timestamps is probably unnecessary in retrospect, not it's a *very* ligh
 2. edit webhook.py to update configuration
 3. `python webhook.py`
 
+## TODO:
+- bianary search
 
 ## License
 [![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl.svg)](http://www.wtfpl.net)
