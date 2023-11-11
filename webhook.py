@@ -27,8 +27,8 @@ leaderboard_pages_to_fetch = 100
 # approximately every 3 hours update leaderboard (counter for number of worker updates before updating userinfo)
 leaderboard_interval = 36
 
-# I wont be updating this, so you'll have to add your own contact info here
-headers={'Client-Agent':'unmaintained-webhook:0:efreak@Discord'}
+# add your own contact info here
+headers={'Client-Agent':'webhook:0:[USERNAME HERE]@Discord'}
 
 
 pos = "Unknown"
